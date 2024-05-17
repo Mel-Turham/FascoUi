@@ -21,8 +21,8 @@ const Home = () => {
 	return (
 		<section className='w-full'>
 			<Navbar />
-			<section className='flex items-center justify-center gap-6 h-screen flex-col'>
-				<div className='grid grid-cols-3 grid-rows-4 w-full h-[448px] gap-4 mt-[10rem]'>
+			<section className='flex items-center justify-center gap-6 h-[400px] mt-[8.7rem] flex-col'>
+				<div className='grid grid-cols-3 grid-rows-4 w-full h-full gap-4 '>
 					<div className='row-start-1 row-end-5 bg-gray-200 rounded-md'>
 						<img
 							src={image1}
@@ -77,7 +77,7 @@ const Home = () => {
 				</div>
 			</section>
 
-			<section className=' w-full  mt-[3rem] py-[4rem] grid grid-cols-3'>
+			<section className=' w-full mt-[3rem] py-[4rem] grid grid-cols-3'>
 				{/*  */}
 				<Clock />
 				{/* carousel there🖐🏻 */}
@@ -114,7 +114,7 @@ const Home = () => {
 				<div className='grid grid-cols-3 gap-4 py-6'>
 					{products.map((product) => {
 						return (
-							<Card key={product.id}>
+							<Card id={product.id} key={product.id}>
 								<figure>
 									<img src={product.image} alt={product.name} />
 								</figure>

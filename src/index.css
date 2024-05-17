@@ -1,0 +1,21 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=PT+Serif:wght@400;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'PT Serif', serif;
+	font-weight: 500;
+}
+
+
+.text-border {
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}

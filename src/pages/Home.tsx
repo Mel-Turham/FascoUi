@@ -13,6 +13,7 @@ import productsData from '../data';
 import { type ProductsType } from '../data';
 import Card from '../components/Card';
 import { FaStar } from 'react-icons/fa';
+import image5 from '../assets/images/bg-img.png';
 const Home = () => {
 	const [currentTimes, setCurrentTimes] = useState(new Date());
 
@@ -204,9 +205,37 @@ const Home = () => {
 						);
 					})}
 				</div>
-				<button className='btn btn-neutral btn-sm w-32 mx-auto'>
-					View more
-				</button>
+				<div className='flex items center justify-center'>
+					<button className='btn btn-neutral btn-sm w-32 mt-6'>
+						View more
+					</button>
+				</div>
+			</section>
+			{/*  */}
+			<section className='grid grid-cols-2 gap-2   mt-[4rem] mb-4 bg-[#DADADA]'>
+				<img src={image5} className='block w-full h-full object-cover' alt='' />
+				<div className='py-[1.5rem] pl-[3rem] flex flex-col gap-2'>
+					<p className='font-light text-xs'>Women Collection</p>
+					<h2 className='text-[29px] font-bold'>Peaky Blinders</h2>
+					<p className='underline cursor-pointer text-xs font-semibold'>
+						Description
+					</p>
+					<p className='text-xs text-pretty w-[80%]'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+						libero temporibus incidunt dolorem itaque cupiditate eveniet dicta
+						ad consectetur ipsam non explicabo, qui ratione ipsa expedita nulla
+						quod adipisci quasi!
+					</p>
+					<div className='flex items-center gap-2'>
+						<span>Size:</span>
+						<span className='btn btn-xs btn-neutral px-[.6rem] rounded-sm'>
+							M
+						</span>
+					</div>
+
+					<p className='font-bold text-xl'>$100.00</p>
+					<button className='w-fit btn btn-neutral btn-sm px-6'>Buy now</button>
+				</div>
 			</section>
 		</section>
 	);

@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import { GoPackage, GoHome } from 'react-icons/go';
+import { AiOutlineProduct } from 'react-icons/ai';
+
+import { IoMdHappy } from 'react-icons/io';
 
 const Navbar = () => {
 	const [changeBackGround, setChangeBackGround] = useState<boolean>(false);
@@ -22,29 +26,35 @@ const Navbar = () => {
 				changeBackGround ? 'bg-slate-50 transition-all' : ''
 			} z-30 flex items-center justify-between w-full py-3 px-[5rem] fixed left-0 top-0`}
 		>
-			<h2 className='text-[1.8rem] font-normal uppercase'>Fasco</h2>
-			<nav className='flex items center  gap-4'>
-				<ul className=' flex items-center justify-center gap-5 mr-3'>
-					<li className='cursor-pointer  transition-all hover:-translate-y-1 px-4 duration-300 ease-in-out'>
+			<h2 className='text-[1.8rem] font-normal uppercase w-1/4 '>
+				Fasco<span className='text-sm leading-tight lowercase'>.mel</span>
+			</h2>
+			<nav className='flex items-center w-2/4'>
+				<ul className=' flex items-center justify-between w-full gap-5 '>
+					<li className='cursor-pointer flex items-center gap-1  transition-all hover:-translate-y-1  duration-300 ease-in-out'>
+						<GoHome />
 						Home
 					</li>
-					<li className='cursor-pointer   hover:-translate-y-1 duration-300 ease-in-out px-4'>
+					<li className='cursor-pointer  flex items-center gap-1   hover:-translate-y-1 duration-300 ease-in-out '>
+						<IoMdHappy />
 						Deals
 					</li>
-					<li className='cursor-pointer   hover:-translate-y-1 duration-300 ease-in-out px-4'>
+					<li className='cursor-pointer flex items-center gap-1   hover:-translate-y-1 duration-300 ease-in-out '>
+						<AiOutlineProduct />
 						New Arrivals
 					</li>
-					<li className='cursor-pointer   hover:-translate-y-1 duration-300 ease-in-out px-4'>
+					<li className='cursor-pointer flex items-center gap-1 hover:-translate-y-1 duration-300 ease-in-out '>
+						<GoPackage />
 						Packages
 					</li>
 				</ul>
-				<div className='flex items-center gap-3'>
-					<button className='cursor-pointer btn btn-outline btn-sm px-4 py-1'>
-						Sign in
-					</button>
-					<button className='cursor-pointer btn btn-sm px-4 py-1'>Login</button>
-				</div>
 			</nav>
+			<div className='flex items-center justify-end gap-3 w-1/4'>
+				<button className='cursor-pointer btn btn-outline btn-sm  py-1'>
+					Sign in
+				</button>
+				<button className='cursor-pointer btn btn-sm  py-1'>Login</button>
+			</div>
 		</header>
 	);
 };

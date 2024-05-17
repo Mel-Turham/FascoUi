@@ -8,32 +8,15 @@ import logo2 from '../assets/Logo/logo-2.png';
 import logo3 from '../assets/Logo/logo-3.png';
 import logo4 from '../assets/Logo/logo-4.png';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import productsData from '../data';
 import { type ProductsType } from '../data';
 import Card from '../components/Card';
 import { FaStar } from 'react-icons/fa';
 import image5 from '../assets/images/bg-img.png';
+import Clock from '../components/Clock';
 const Home = () => {
-	const [currentTimes, setCurrentTimes] = useState(new Date());
-
 	const [products, setProducts] = useState<ProductsType[]>(productsData);
-
-	console.log(products);
-
-	useEffect(() => {
-		const timerId = setInterval(() => {
-			setCurrentTimes(new Date());
-		}, 1000);
-		return () => {
-			clearInterval(timerId);
-		};
-	}, []);
-
-	const day = currentTimes.getDate();
-	const hours = currentTimes.getHours().toString().padStart(2, '0');
-	const minutes = currentTimes.getMinutes().toString().padStart(2, '0');
-	const seconds = currentTimes.getSeconds().toString().padStart(2, '0');
 
 	return (
 		<section className='w-full'>
@@ -95,48 +78,8 @@ const Home = () => {
 			</section>
 
 			<section className=' w-full  mt-[3rem] py-[4rem] grid grid-cols-3'>
-				<div className='flex flex-col gap-5'>
-					<h1 className='capitalize text-4xl font-medium'>
-						Deals of the month
-					</h1>
-					<p className='text-sm'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-						facilis deleniti enim optio dolores, esse totam debitis veritatis
-						aut quaerat!
-					</p>
-					<button className='btn btn-sm btn-neutral shadow-md px-8 w-fit'>
-						Buy now
-					</button>
-					<div className=' flex flex-col'>
-						<h3 className='mb-3 text-lg font-semibold font-sans'>
-							Hurry, before it's too late!
-						</h3>
-						<div className='flex items-center gap-5'>
-							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>{day}</span>
-								<span>Day</span>
-							</div>
-							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>
-									{hours}
-								</span>
-								<span>Hr</span>
-							</div>
-							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>
-									{minutes}
-								</span>
-								<span>min</span>
-							</div>
-							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>
-									{seconds}
-								</span>
-								<span>sec</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				{/*  */}
+				<Clock />
 				{/* carousel there🖐🏻 */}
 			</section>
 

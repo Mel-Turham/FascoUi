@@ -9,9 +9,16 @@ import logo3 from '../assets/Logo/logo-3.png';
 import logo4 from '../assets/Logo/logo-4.png';
 
 import { useEffect, useState } from 'react';
-
+import productsData from '../data';
+import { type ProductsType } from '../data';
+import Card from '../components/Card';
+import { FaStar } from 'react-icons/fa';
 const Home = () => {
 	const [currentTimes, setCurrentTimes] = useState(new Date());
+
+	const [products, setProducts] = useState<ProductsType[]>(productsData);
+
+	console.log(products);
 
 	useEffect(() => {
 		const timerId = setInterval(() => {
@@ -64,7 +71,7 @@ const Home = () => {
 							shop now
 						</button>
 					</div>
-					<div className='bg-indigo-400 rounded-md overflow-hidden'>
+					<div className=' rounded-md overflow-hidden'>
 						<img src={image4} alt='' className='w-full  h-full  object-cover' />
 					</div>
 					<div className='bg-gray-200 row-start-1 row-end-5 rounded-md px-5'>
@@ -129,6 +136,77 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
+				{/* carousel there🖐🏻 */}
+			</section>
+
+			{/* new arrivals */}
+
+			<section className='mt[8rem] py-1 w-full'>
+				<div className='flex flex-col items-center gap-4'>
+					<h2 className='capitalize text-4xl font-light'>New arrivals</h2>
+					<p className='w-[500px] text-sm text-center text-gray-700 mt-5'>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque alias
+						magni labore dolor dignissimos placeat qui modi, minima dolores.
+					</p>
+				</div>
+				<div className='flex items-center justify-center gap-6 p-6 mt-8 '>
+					<button className='btn btn-sm px-5 btn-outline text-[14px] font-light capitalize'>
+						Men's fashion
+					</button>
+					<button className='btn btn-sm px-5 btn-outline text-[14px] font-light capitalize'>
+						Women's fashion
+					</button>
+					<button className='btn btn-sm px-5 btn-outline text-[14px] font-light capitalize'>
+						Women's Accessories
+					</button>
+					<button className='btn btn-sm px-5 btn-outline text-[14px] font-light capitalize'>
+						Men Accessories
+					</button>
+					<button className='btn btn-sm px-5 btn-outline text-[14px] font-light capitalize'>
+						Discount Deals
+					</button>
+				</div>
+
+				<div className='grid grid-cols-3 gap-4 py-6'>
+					{products.map((product) => {
+						return (
+							<Card key={product.id}>
+								<figure>
+									<img src={product.image} alt={product.name} />
+								</figure>
+								<div className='card-body py-4 px-0'>
+									<div className='card-title leading-none items-start justify-between '>
+										<div className='flex flex-col gap-2'>
+											<p className='font-semibold text-sm'>{product.name}</p>
+											<span className='font-normal text-[13px]'>
+												{product.author}
+											</span>
+											<span className='font-normal text-[13px]'>
+												(4.1k) Customer Reviews
+											</span>
+										</div>
+										<div className='flex items-center gap-1'>
+											<FaStar className='text-[13.4px] text-orange-500' />
+											<FaStar className='text-[13.4px] text-orange-500' />
+											<FaStar className='text-[13.4px] text-orange-500' />
+											<FaStar className='text-[13.4px] text-orange-500' />
+											<FaStar className='text-[13.4px] text-orange-500' />
+										</div>
+									</div>
+									<div className='flex justify-between items-center mt-2'>
+										<p className='font-bold'>${product.price.toFixed(2)}</p>
+										<span className='font-normal text-[13px] text-[#FF4646]'>
+											Almost Sold Out
+										</span>
+									</div>
+								</div>
+							</Card>
+						);
+					})}
+				</div>
+				<button className='btn btn-neutral btn-sm w-32 mx-auto'>
+					View more
+				</button>
 			</section>
 		</section>
 	);

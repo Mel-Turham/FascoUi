@@ -20,11 +20,11 @@ h6 {
 .embla__container {
 	display: grid;
 	grid-auto-flow: column;
-	grid-auto-columns: 58%;
+	grid-auto-columns: 49%;
 	height: 145px; 
-  gap: 10px;/* Each slide covers 80% of the viewport */
+  gap: 8px;/* Each slide covers 80% of the viewport */
 }
 
 .embla__slide{
-  background: #000;
+  border-radius: 10px;
 }

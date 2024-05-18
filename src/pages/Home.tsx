@@ -20,7 +20,11 @@ import Autoplay from 'embla-carousel-autoplay';
 import {
 	FaRegArrowAltCircleLeft,
 	FaRegArrowAltCircleRight,
+	FaHandHoldingHeart,
+	FaPhone,
 } from 'react-icons/fa';
+import { GrCertificate } from 'react-icons/gr';
+import { RxCodesandboxLogo } from 'react-icons/rx';
 const Home = () => {
 	const [products, setProducts] = useState<ProductsType[]>(productsData);
 	const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -254,36 +258,89 @@ const Home = () => {
 					</button>
 				</div>
 			</section>
-			{/*  */}
-			<section className=''>
-        <div className='grid grid-cols-2 gap-2 mt-[2rem] bg-[#DADADA] mb-4'>
-        <img src={image5} className='block w-full h-full object-cover' alt='' />
-				<div className='py-[1.5rem] pl-[3rem] flex flex-col gap-2'>
-					<p className='font-light text-xs'>Women Collection</p>
-					<h2 className='text-[29px] font-bold'>Peaky Blinders</h2>
-					<p className='underline cursor-pointer text-xs font-semibold'>
-						Description
-					</p>
-					<p className='text-xs text-pretty w-[80%]'>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-						libero temporibus incidunt dolorem itaque cupiditate eveniet dicta
-						ad consectetur ipsam non explicabo, qui ratione ipsa expedita nulla
-						quod adipisci quasi!
-					</p>
-					<div className='flex items-center gap-2'>
-						<span>Size:</span>
-						<span className='btn btn-xs btn-neutral px-[.6rem] rounded-sm'>
-							M
-						</span>
-					</div>
 
-					<p className='font-bold text-xl'>$100.00</p>
-					<button className='w-fit btn btn-neutral btn-sm px-6'>Buy now</button>
+			{/*  */}
+			<section className='bg-red-600'>
+				<div className='grid grid-cols-2 gap-2 mt-[2rem] bg-[#DADADA]'>
+					<img
+						src={image5}
+						className='block w-full h-full object-cover'
+						alt=''
+					/>
+					<div className='py-[1.5rem] pl-[3rem] flex flex-col gap-2'>
+						<p className='font-light text-xs'>Women Collection</p>
+						<h2 className='text-[29px] font-bold'>Peaky Blinders</h2>
+						<p className='underline cursor-pointer text-xs font-semibold'>
+							Description
+						</p>
+						<p className='text-xs text-pretty w-[80%]'>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+							libero temporibus incidunt dolorem itaque cupiditate eveniet dicta
+							ad consectetur ipsam non explicabo, qui ratione ipsa expedita
+							nulla quod adipisci quasi!
+						</p>
+						<div className='flex items-center gap-2'>
+							<span>Size:</span>
+							<span className='btn btn-xs btn-neutral px-[.6rem] rounded-sm'>
+								M
+							</span>
+						</div>
+
+						<p className='font-bold text-xl'>$100.00</p>
+						<button className='w-fit btn btn-neutral btn-sm px-6'>
+							Buy now
+						</button>
+					</div>
 				</div>
-        </div>
-			
+				<div className='flex items-center justify-between p-8 bg-gray-100'>
+					<div className='flex gap-1 items-center'>
+						<FaHandHoldingHeart className='w-8 h-8' />
+						<div className='flex flex-col'>
+							<p className='text-[13.5px] font-semibold capitalize'>
+								Hight quality
+							</p>
+							<span className='text-[12px] font-light capitalize'>
+								crafted from top materials
+							</span>
+						</div>
+					</div>
+					<div className='flex gap-1 items-center'>
+						<GrCertificate className='w-8 h-8' />
+						<div className='flex flex-col'>
+							<p className='text-[13.5px] font-semibold capitalize'>
+								Warrany Protection
+							</p>
+							<span className='text-[12px] font-light capitalize'>
+								over 2 years
+							</span>
+						</div>
+					</div>
+					<div className='flex gap-1 items-center'>
+						<RxCodesandboxLogo className='w-8 h-8' />
+						<div className='flex flex-col'>
+							<p className='text-[13.5px] font-semibold capitalize'>
+								Free Shipping
+							</p>
+							<span className='text-[12px] font-light capitalize'>
+								Oder over 150$
+							</span>
+						</div>
+					</div>
+					<div className='flex gap-1 items-center'>
+						<FaPhone className='w-8 h-6' />
+						<div className='flex flex-col'>
+							<p className='text-[13.5px] font-semibold capitalize'>
+								24 / 7 support
+							</p>
+							<span className='text-[12px] font-light capitalize'>
+								Dedicated support
+							</span>
+						</div>
+					</div>
+				</div>
 			</section>
 		</section>
+    
 	);
 };
 export default Home;

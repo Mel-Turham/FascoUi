@@ -8,15 +8,37 @@ import logo2 from '../assets/Logo/logo-2.png';
 import logo3 from '../assets/Logo/logo-3.png';
 import logo4 from '../assets/Logo/logo-4.png';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import productsData from '../data';
 import { type ProductsType } from '../data';
 import Card from '../components/Card';
 import { FaStar } from 'react-icons/fa';
 import image5 from '../assets/images/bg-img.png';
 import Clock from '../components/Clock';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import {
+	FaRegArrowAltCircleLeft,
+	FaRegArrowAltCircleRight,
+} from 'react-icons/fa';
 const Home = () => {
 	const [products, setProducts] = useState<ProductsType[]>(productsData);
+	const [emblaRef, emblaApi] = useEmblaCarousel(
+		{
+			loop: false,
+			align: 'start',
+			containScroll: 'trimSnaps',
+			slidesToScroll: 1,
+			dragFree: true,
+		},
+		[Autoplay()],
+	);
+
+	useEffect(() => {
+		if (emblaApi) {
+			// Access API
+		}
+	}, [emblaApi]);
 
 	return (
 		<section className='w-full'>
@@ -77,10 +99,88 @@ const Home = () => {
 				</div>
 			</section>
 
-			<section className=' w-full mt-[3rem] py-[4rem] grid grid-cols-3'>
+			<section className=' w-full mt-[3rem] py-[4rem] flex gap-5'>
 				{/*  */}
 				<Clock />
-				{/* carousel there🖐🏻 */}
+				<div
+					className='embla overflow-hidden relative  w-2/3 mt-1'
+					ref={emblaRef}
+				>
+					<div className='embla__container flex '>
+						<div className='embla__slide relative '>
+							<img
+								src='../../src/assets/images/slide-1.png'
+								alt='image-slider'
+								className='w-full h-full object-contain'
+							/>
+						</div>
+						<div className='embla__slide '>
+							<img
+								src='../../src/assets/images/slide-2.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+						<div className='embla__slide'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+						<div className='embla__slide'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+						<div className='embla__slide'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+						<div className='embla__slide'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+						<div className='embla__slide'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+						<div className='embla__slide'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='w-full h-full '
+							/>
+						</div>
+					</div>
+					<div className='absolute top-[50%] w-[100%] flex items-center justify-between pr-4 left-2'>
+						<button
+							className='btn rounded-full top-[50%] -left-5 btn-sm'
+							type='button'
+							onClick={() => emblaApi?.scrollPrev()}
+						>
+							<FaRegArrowAltCircleLeft />
+						</button>
+						<button
+							className='btn right-0 top-[50%] rounded-full btn-sm'
+							type='button'
+							onClick={() => emblaApi?.scrollNext()}
+						>
+							<FaRegArrowAltCircleRight />
+						</button>
+					</div>
+				</div>
 			</section>
 
 			{/* new arrivals */}
@@ -155,8 +255,9 @@ const Home = () => {
 				</div>
 			</section>
 			{/*  */}
-			<section className='grid grid-cols-2 gap-2   mt-[4rem] mb-4 bg-[#DADADA]'>
-				<img src={image5} className='block w-full h-full object-cover' alt='' />
+			<section className=''>
+        <div className='grid grid-cols-2 gap-2 mt-[2rem] bg-[#DADADA] mb-4'>
+        <img src={image5} className='block w-full h-full object-cover' alt='' />
 				<div className='py-[1.5rem] pl-[3rem] flex flex-col gap-2'>
 					<p className='font-light text-xs'>Women Collection</p>
 					<h2 className='text-[29px] font-bold'>Peaky Blinders</h2>
@@ -179,6 +280,8 @@ const Home = () => {
 					<p className='font-bold text-xl'>$100.00</p>
 					<button className='w-fit btn btn-neutral btn-sm px-6'>Buy now</button>
 				</div>
+        </div>
+			
 			</section>
 		</section>
 	);

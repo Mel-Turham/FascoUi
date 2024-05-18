@@ -17,7 +17,7 @@ const Clock = () => {
 	const seconds = currentTimes.getSeconds().toString().padStart(2, '0');
 
 	return(
-    <div className='flex flex-col gap-5'>
+    <div className='flex flex-col gap-5 w-1/3'>
 					<h1 className='capitalize text-4xl font-medium'>
 						Deals of the month
 					</h1>

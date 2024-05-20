@@ -23,6 +23,7 @@ import {
 	FaHandHoldingHeart,
 	FaPhone,
 } from 'react-icons/fa';
+import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
 import { GrCertificate } from 'react-icons/gr';
 import { RxCodesandboxLogo } from 'react-icons/rx';
 const Home = () => {
@@ -145,24 +146,25 @@ const Home = () => {
 							<img
 								src='../../src/assets/images/ig-4.png'
 								alt='image-slider'
-								className='w-full h-full '
+								className='w-full h-full  '
+
 							/>
 						</div>
 					</div>
 					<div className='absolute top-[50%] w-[100%] flex items-center justify-between pr-4 left-2'>
 						<button
-							className='btn rounded-full top-[50%] -left-5 btn-sm'
+							className='btn rounded-full top-[50%] -left-5 btn-sm p-0 w-12 h-12 shadow-md'
 							type='button'
 							onClick={() => emblaApi?.scrollPrev()}
 						>
-							<FaRegArrowAltCircleLeft />
+							<IoIosArrowBack   className='h-5 w-5' />
 						</button>
 						<button
-							className='btn right-0 top-[50%] rounded-full btn-sm'
+							className='btn right-0 top-[50%] rounded-full btn-sm p-0 w-12 h-12'
 							type='button'
 							onClick={() => emblaApi?.scrollNext()}
 						>
-							<FaRegArrowAltCircleRight />
+							<IoIosArrowForward className='h-5 w-5'/>
 						</button>
 					</div>
 				</div>

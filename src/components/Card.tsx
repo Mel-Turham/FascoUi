@@ -1,4 +1,5 @@
 import { FaStar } from 'react-icons/fa';
+import Modal from './Modal';
 
 type ProductType = {
 	image: string;
@@ -40,13 +41,22 @@ const Card = (props: ProductType) => {
 						</span>
 					</div>
 					<button
-						onClick={() => handlerClick({id})}
+						onClick={() => handlerClick({ id })}
 						className='btn btn-sm btn-outline capitalize'
 					>
 						See details
 					</button>
 				</div>
 			</article>
+			{/* {image && (
+				<Modal
+					id={id}
+					image={image}
+					name={name}
+					price={price}
+					author={author}
+				/>
+			)} */}
 		</>
 	);
 };

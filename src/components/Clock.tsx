@@ -35,11 +35,11 @@ const Clock = () => {
 						</h3>
 						<div className='flex items-center gap-5'>
 							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>{day}</span>
+								<span className='p-4 bg-white shadow-lg rounded-lg text-[1.2rem] font-medium'>{day}</span>
 								<span>Day</span>
 							</div>
 							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>
+								<span className='p-4 bg-white shadow-lg rounded-lg text-[1.2rem] font-medium'>
 									{hours}
 								</span>
 								<span>
@@ -47,7 +47,7 @@ const Clock = () => {
                   </span>
 							</div>
 							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>
+								<span className='p-4 bg-white shadow-lg rounded-lg text-[1.2rem] font-medium'>
 									{minutes}
 								</span>
 								<span>
@@ -55,7 +55,7 @@ const Clock = () => {
                 </span>
 							</div>
 							<div className='flex flex-col justify-center items-center'>
-								<span className='p-4 bg-white shadow-lg rounded-lg'>
+								<span className='p-4 bg-white shadow-lg rounded-lg text-[1.2rem] font-medium'>
 									{seconds}
 								</span>
 								<span>sec</span>

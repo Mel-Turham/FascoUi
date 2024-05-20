@@ -12,7 +12,7 @@ const Card = (props: ProductType) => {
 	const { image, name, author, price, id, handlerClick } = props;
 	return (
 		<>
-			<article className='card p-4 bg-white rounded-sm shadow-sm cursor-pointer'>
+			<article className='card p-4 bg-white rounded-sm shadow-sm'>
 				<figure>
 					<img src={image} alt={name} />
 				</figure>

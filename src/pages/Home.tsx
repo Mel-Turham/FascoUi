@@ -27,6 +27,9 @@ import { GrCertificate } from 'react-icons/gr';
 import { RxCodesandboxLogo } from 'react-icons/rx';
 const Home = () => {
 	const [products, setProducts] = useState<ProductsType[]>(productsData);
+	const [showMore, setShowMore] = useState<boolean>(false);
+
+	const newProducts = showMore ? products : products.slice(0, 6);
 	const [emblaRef, emblaApi] = useEmblaCarousel(
 		{
 			loop: false,
@@ -43,6 +46,12 @@ const Home = () => {
 			// Access API
 		}
 	}, [emblaApi]);
+
+  
+	const handleClick = (id: number) => {
+		const item = newProducts.find((item) => item.id === id);
+		console.log(item);
+	};
 
 	return (
 		<section className='w-full'>
@@ -134,35 +143,7 @@ const Home = () => {
 						</div>
 						<div className='embla__slide'>
 							<img
-								src='../../src/assets/images/slide-3.png'
-								alt='image-slider'
-								className='w-full h-full '
-							/>
-						</div>
-						<div className='embla__slide'>
-							<img
-								src='../../src/assets/images/slide-3.png'
-								alt='image-slider'
-								className='w-full h-full '
-							/>
-						</div>
-						<div className='embla__slide'>
-							<img
-								src='../../src/assets/images/slide-3.png'
-								alt='image-slider'
-								className='w-full h-full '
-							/>
-						</div>
-						<div className='embla__slide'>
-							<img
-								src='../../src/assets/images/slide-3.png'
-								alt='image-slider'
-								className='w-full h-full '
-							/>
-						</div>
-						<div className='embla__slide'>
-							<img
-								src='../../src/assets/images/slide-3.png'
+								src='../../src/assets/images/ig-4.png'
 								alt='image-slider'
 								className='w-full h-full '
 							/>
@@ -216,45 +197,28 @@ const Home = () => {
 				</div>
 
 				<div className='grid grid-cols-3 gap-4 py-6'>
-					{products.map((product) => {
+					{newProducts.map((product) => {
 						return (
-							<Card id={product.id} key={product.id}>
-								<figure>
-									<img src={product.image} alt={product.name} />
-								</figure>
-								<div className='card-body py-4 px-0'>
-									<div className='card-title leading-none items-start justify-between '>
-										<div className='flex flex-col gap-2'>
-											<p className='font-semibold text-sm'>{product.name}</p>
-											<span className='font-normal text-[13px]'>
-												{product.author}
-											</span>
-											<span className='font-normal text-[13px]'>
-												(4.1k) Customer Reviews
-											</span>
-										</div>
-										<div className='flex items-center gap-1'>
-											<FaStar className='text-[13.4px] text-orange-500' />
-											<FaStar className='text-[13.4px] text-orange-500' />
-											<FaStar className='text-[13.4px] text-orange-500' />
-											<FaStar className='text-[13.4px] text-orange-500' />
-											<FaStar className='text-[13.4px] text-orange-500' />
-										</div>
-									</div>
-									<div className='flex justify-between items-center mt-2'>
-										<p className='font-bold'>${product.price.toFixed(2)}</p>
-										<span className='font-normal text-[13px] text-[#FF4646]'>
-											Almost Sold Out
-										</span>
-									</div>
-								</div>
-							</Card>
+							<Card
+								key={product.id}
+								// image={product.image}
+								// id={product.id}
+								// name={product.name}
+								// price={product.price}
+								// author={product.author}
+
+								{...product}
+								handlerClick={() => handleClick(product.id)}
+							/>
 						);
 					})}
 				</div>
 				<div className='flex items center justify-center'>
-					<button className='btn btn-neutral btn-sm w-32 mt-6'>
-						View more
+					<button
+						className='btn btn-neutral btn-sm w-32 mt-6'
+						onClick={() => setShowMore((prevState) => !prevState)}
+					>
+						{showMore ? 'View less' : 'View more'}
 					</button>
 				</div>
 			</section>
@@ -339,8 +303,29 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
+			<section className='mt-[5rem]'>
+				<div className='flex flex-col py-2 gap-4 items-center '>
+					<h2 className='capitalize text-4xl font-light mb-3'>
+						Follow Us On Instagram
+					</h2>
+					<p className='w-[800px] text-center text-balance text-sm'>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+						voluptatem ducimus minima adipisci similique, vitae laboriosam eum
+						debitis doloribus dolorum!
+					</p>
+				</div>
+
+				<div className='grid grid-cols-7 gap-4 py-4 mt-5 justify-center'>
+					<img src='../../src/assets/images/ig-2.png' alt='' />
+					<img src='../../src/assets/images/ig-3.png' alt='' />
+					<img src='../../src/assets/images/ig-4.png' alt='' />
+					<img src='../../src/assets/images/ig-5.png' alt='' />
+					<img src='../../src/assets/images/ig-6.png' alt='' />
+					<img src='../../src/assets/images/ig-2.png' alt='' />
+					<img src='../../src/assets/images/ig-3.png' alt='' />
+				</div>
+			</section>
 		</section>
-    
 	);
 };
 export default Home;

@@ -9,25 +9,22 @@ import logo3 from '../assets/Logo/logo-3.png';
 import logo4 from '../assets/Logo/logo-4.png';
 
 import { useState, useEffect } from 'react';
-import productsData from '../data';
-import { type ProductsType } from '../data';
+import products from '../data';
 import Card from '../components/Card';
-import { FaStar } from 'react-icons/fa';
 import image5 from '../assets/images/bg-img.png';
 import Clock from '../components/Clock';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import {
-	FaRegArrowAltCircleLeft,
-	FaRegArrowAltCircleRight,
-	FaHandHoldingHeart,
-	FaPhone,
-} from 'react-icons/fa';
-import { IoIosArrowBack , IoIosArrowForward } from "react-icons/io";
+import { FaHandHoldingHeart, FaPhone } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { GrCertificate } from 'react-icons/gr';
 import { RxCodesandboxLogo } from 'react-icons/rx';
+import Modal from '../components/Modal';
 const Home = () => {
-	const [products, setProducts] = useState<ProductsType[]>(productsData);
+	const [selectedProductId, setSelectedProductId] = useState<number | null>(
+		null,
+	);
+	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [showMore, setShowMore] = useState<boolean>(false);
 
 	const newProducts = showMore ? products : products.slice(0, 6);
@@ -48,14 +45,23 @@ const Home = () => {
 		}
 	}, [emblaApi]);
 
-  
-	const handleClick = (id: number) => {
-		const item = newProducts.find((item) => item.id === id);
-		console.log(item);
+	const handleOpenModal = (productId: number) => {
+		setSelectedProductId(productId);
+		setIsModalOpen(true);
 	};
+
+	const handleCloseModal = () => {
+		setSelectedProductId(null);
+		setIsModalOpen(false);
+	};
+
+	const selectedProduct =
+		products.find((product) => product.id === selectedProductId) || null;
 
 	return (
 		<section className='w-full'>
+			{/* modal */}
+
 			<Navbar />
 			<section className='flex items-center justify-center gap-6 h-[400px] mt-[8.7rem] flex-col'>
 				<div className='grid grid-cols-3 grid-rows-4 w-full h-full gap-4 '>
@@ -147,7 +153,6 @@ const Home = () => {
 								src='../../src/assets/images/ig-4.png'
 								alt='image-slider'
 								className='w-full h-full  '
-
 							/>
 						</div>
 					</div>
@@ -157,14 +162,14 @@ const Home = () => {
 							type='button'
 							onClick={() => emblaApi?.scrollPrev()}
 						>
-							<IoIosArrowBack   className='h-5 w-5' />
+							<IoIosArrowBack className='h-5 w-5' />
 						</button>
 						<button
 							className='btn right-0 top-[50%] rounded-full btn-sm p-0 w-12 h-12'
 							type='button'
 							onClick={() => emblaApi?.scrollNext()}
 						>
-							<IoIosArrowForward className='h-5 w-5'/>
+							<IoIosArrowForward className='h-5 w-5' />
 						</button>
 					</div>
 				</div>
@@ -203,17 +208,16 @@ const Home = () => {
 						return (
 							<Card
 								key={product.id}
-								// image={product.image}
-								// id={product.id}
-								// name={product.name}
-								// price={product.price}
-								// author={product.author}
-
-								{...product}
-								handlerClick={() => handleClick(product.id)}
+								product={product}
+								onViewDetails={handleOpenModal}
 							/>
 						);
 					})}
+					<Modal
+						product={selectedProduct}
+						isOpen={isModalOpen}
+						onClose={handleCloseModal}
+					/>
 				</div>
 				<div className='flex items center justify-center'>
 					<button

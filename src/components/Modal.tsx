@@ -14,7 +14,7 @@ interface ModalProps {
 const Modal = ({ product, isOpen, onClose }: ModalProps) => {
 	if (!isOpen || !product) return null;
 	return (
-		<div className='w-full h-full bg-black/30 filter fixed z-40 top-0 left-0 flex items-center justify-center '>
+		<div className='w-full h-full bg-black bg-opacity-50 backdrop-blur-sm fixed z-40 top-0 left-0 flex items-center justify-center '>
 			<div className='w-[550px] max-w-[100%] bg-white rounded-md text-black flex gap-4 relative p-4 shadow-sm transition-all'>
 				<button
 					onClick={onClose}
@@ -31,7 +31,7 @@ const Modal = ({ product, isOpen, onClose }: ModalProps) => {
 				</figure>
 				<div className='w-1/2 flex flex-col'>
 					<h2 className='text-[1.35rem] font-semibold '>{product?.name}</h2>
-					<h3 className='underline mb-1'>{product?.author}</h3>
+					<h3 className='underline mb-1'>Author: {product?.author}</h3>
 					<p className='font-bold'>Price: ${product?.price.toFixed(2)}</p>
 					<p className='font-light text-[12px] text-pretty line-clamp-3'>
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum

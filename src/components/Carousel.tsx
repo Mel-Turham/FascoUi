@@ -7,7 +7,6 @@ type PropsCarousels = {
 };
 
 const Carousel = (props: PropsCarousels) => {
-  console.log(props.options);
 	const [emblaRef, emblaApi] = useEmblaCarousel(props.options);
   
 

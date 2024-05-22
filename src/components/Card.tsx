@@ -23,7 +23,7 @@ const Card = ({ product, onViewDetails }: ProductsProps) => {
 					<div className='card-title leading-none items-start justify-between '>
 						<div className='flex flex-col gap-2'>
 							<p className='font-semibold text-sm'>{product?.name}</p>
-							<span className='font-normal text-[13px]'>{product?.author}</span>
+							<span className='font-normal text-[13px]'>Author: {product?.author}</span>
 							<span className='font-normal text-[13px]'>
 								(4.1k) Customer Reviews
 							</span>
@@ -37,7 +37,7 @@ const Card = ({ product, onViewDetails }: ProductsProps) => {
 						</div>
 					</div>
 					<div className='flex justify-between items-center mt-2'>
-						<p className='font-bold'>${product?.price.toFixed(2)}</p>
+						<p className='font-bold'>Price: ${product?.price.toFixed(2)}</p>
 						<span className='font-normal text-[13px] text-[#FF4646]'>
 							Almost Sold Out
 						</span>

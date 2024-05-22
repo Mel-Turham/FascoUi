@@ -2,30 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 0px) and (max-width: 1000px) {
-	.large-screen {
-		display: none;
-	}
-	.small-screen {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		display: block;
-    font-size: 1.2rem;
-    text-wrap: nowrap;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: 'inter', sans-serif;
-	}
-}
-
-@media (max-width < 1200px) {
-	.small-screen {
-		display: none;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-}

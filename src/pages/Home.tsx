@@ -20,6 +20,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { GrCertificate } from 'react-icons/gr';
 import { RxCodesandboxLogo } from 'react-icons/rx';
 import Modal from '../components/Modal';
+import Carousel from '../components/Testimonials';
 const Home = () => {
 	const [selectedProductId, setSelectedProductId] = useState<number | null>(
 		null,
@@ -230,7 +231,7 @@ const Home = () => {
 			</section>
 
 			{/*  */}
-			<section className='bg-red-600'>
+			<section>
 				<div className='grid grid-cols-2 gap-2 mt-[2rem] bg-[#DADADA]'>
 					<img
 						src={image5}
@@ -331,6 +332,8 @@ const Home = () => {
 					<img src='../../src/assets/images/ig-3.png' alt='' />
 				</div>
 			</section>
+
+			<Carousel/> 
 		</section>
 	);
 };

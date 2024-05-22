@@ -8,8 +8,6 @@ const App = () => {
 			<main className='large-screen px-[3rem] mx-auto w-[1090px] lg:block max-md:hidden'>
 				<Home />
 			</main>
-
-			<h1 className='small-screen'>Please is only on large screen re-size your device!!!!!</h1>
 		</>
 	);
 };

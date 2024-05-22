@@ -119,13 +119,13 @@ const Carousel = () => {
 				</div>
 
 				<div className='flex justify-center mt-4 gap-3'>
-					<button
+					<button aria-label='Previous'
 						onClick={() => emblaApi?.scrollPrev()}
 						className='bg-white shadow-md p-4 rounded-full w-10 h-10 grid place-content-center'
 					>
 						<GrFormPrevious />
 					</button>
-					<button
+					<button aria-label='Next'
 						onClick={() => emblaApi?.scrollNext()}
 						className='bg-white shadow-md p-4 w-10 h-10 rounded-full  grid place-content-center '
 					>

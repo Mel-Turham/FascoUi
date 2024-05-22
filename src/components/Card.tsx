@@ -23,7 +23,9 @@ const Card = ({ product, onViewDetails }: ProductsProps) => {
 					<div className='card-title leading-none items-start justify-between '>
 						<div className='flex flex-col gap-2'>
 							<p className='font-semibold text-sm'>{product?.name}</p>
-							<span className='font-normal text-[13px]'>Author: {product?.author}</span>
+							<span className='font-normal text-[13px]'>
+								Author: {product?.author}
+							</span>
 							<span className='font-normal text-[13px]'>
 								(4.1k) Customer Reviews
 							</span>
@@ -43,6 +45,9 @@ const Card = ({ product, onViewDetails }: ProductsProps) => {
 						</span>
 					</div>
 					<button
+						aria-label='Details'
+						title='About product'
+						type='button'
 						onClick={() => onViewDetails(product.id)}
 						className='btn btn-sm btn-outline capitalize'
 					>

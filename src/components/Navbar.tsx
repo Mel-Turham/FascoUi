@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { GoPackage, GoHome } from 'react-icons/go';
 import { AiOutlineProduct } from 'react-icons/ai';
-
 import { IoMdHappy } from 'react-icons/io';
 
 const Navbar = () => {
@@ -23,7 +22,7 @@ const Navbar = () => {
 	return (
 		<header
 			className={`${
-				changeBackGround ? 'backdrop-blur-lg transition-all' : ''
+				changeBackGround ? 'backdrop-blur-lg  transition-all' : ''
 			} z-30 flex items-center justify-between w-full py-3 px-[5rem] fixed left-0 top-0`}
 		>
 			<h2 className='text-[1.8rem] font-normal uppercase w-1/4 '>
@@ -50,10 +49,20 @@ const Navbar = () => {
 				</ul>
 			</nav>
 			<div className='flex items-center justify-end gap-3 w-1/4'>
-				<button className='cursor-pointer btn btn-outline btn-sm  py-1'>
+				<button
+					aria-label='sign in button '
+					title='signIn'
+					className='cursor-pointer btn btn-outline btn-sm  py-1'
+				>
 					Sign in
 				</button>
-				<button className='cursor-pointer btn btn-sm  py-1'>Login</button>
+				<button
+					aria-label='login button'
+					title='Login'
+					className='cursor-pointer btn btn-sm  py-1'
+				>
+					Login
+				</button>
 			</div>
 		</header>
 	);

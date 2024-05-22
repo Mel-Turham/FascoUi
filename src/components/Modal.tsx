@@ -16,7 +16,8 @@ const Modal = ({ product, isOpen, onClose }: ModalProps) => {
 	return (
 		<div className='w-full h-full bg-black bg-opacity-50 backdrop-blur-sm fixed z-40 top-0 left-0 flex items-center justify-center '>
 			<div className='w-[550px] max-w-[100%] bg-white rounded-md text-black flex gap-4 relative p-4 shadow-sm transition-all'>
-				<button
+				<button arial-label='Close modal'
+				title='close'
 					onClick={onClose}
 					className='absolute right-2 top-2 h-5 w-5 bg-slate-100 grid place-content-center p-3  rounded-full '
 				>
@@ -39,7 +40,7 @@ const Modal = ({ product, isOpen, onClose }: ModalProps) => {
 						recusandae voluptates in culpa sit excepturi perferendis nesciunt ex
 						numquam doloremque, quae facilis?
 					</p>
-          <button className='btn w-fit btn-sm mt-2 btn-neutral'>Add to card</button>
+          <button aria-label='Add to card' title='add product' className='btn w-fit btn-sm mt-2 btn-neutral'>Add to card</button>
 				</div>
 			</div>
 		</div>

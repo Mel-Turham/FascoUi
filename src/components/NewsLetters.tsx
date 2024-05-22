@@ -4,10 +4,10 @@ const NewsLetters = () => {
 			<div className='flex mx-auto items-center'>
 				<img
 					src='../../src/assets/images/newImage-1.png'
-					alt=''
+					alt='mannequin image'
 					className='h-[500px]'
 				/>
-				<form className=''>
+				<form>
 					<div className='flex flex-col gap-3 items-center bg-white shadow-lg p-[4rem]'>
 						<h3 className='text-2xl text-nowrap font-sans uppercase'>
 							Subscribe To Our Newsletter
@@ -16,6 +16,7 @@ const NewsLetters = () => {
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 						</p>
 						<input
+							aria-label='email field'
 							type='email'
 							name='email'
 							id='email'
@@ -23,14 +24,14 @@ const NewsLetters = () => {
 							autoComplete='off'
 							className='w- w-full py-1 px-2 border-black border-solid outline-none border rounded-[2px] focus:outline focus:outline-black focus:border-none'
 						/>
-						<button className='btn btn-neutral btn-sm w-full' type='submit'>
+						<button aria-label="Submit button" className='btn btn-neutral btn-sm w-full' type='submit'>
 							Subscribe now
 						</button>
 					</div>
 				</form>
 				<img
 					src='../../src/assets/images/newImage-2.png'
-					alt=''
+					alt='mannequin image'
 					className='h-[500px]'
 				/>
 			</div>

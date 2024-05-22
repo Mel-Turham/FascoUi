@@ -105,7 +105,7 @@ const Home = () => {
 					<div className='bg-gray-200 row-start-1 row-end-5 rounded-md px-5'>
 						<img
 							src={image3}
-							alt=''
+							alt='image hero'
 							className='w-full h-[100%] object-contain object-center-top'
 						/>
 					</div>

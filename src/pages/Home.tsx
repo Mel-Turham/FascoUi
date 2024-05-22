@@ -21,6 +21,7 @@ import { GrCertificate } from 'react-icons/gr';
 import { RxCodesandboxLogo } from 'react-icons/rx';
 import Modal from '../components/Modal';
 import Carousel from '../components/Testimonials';
+import NewsLetters from '../components/NewsLetters';
 const Home = () => {
 	const [selectedProductId, setSelectedProductId] = useState<number | null>(
 		null,
@@ -333,7 +334,8 @@ const Home = () => {
 				</div>
 			</section>
 
-			<Carousel/> 
+			<Carousel />
+			<NewsLetters />
 		</section>
 	);
 };

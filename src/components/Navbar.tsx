@@ -23,7 +23,7 @@ const Navbar = () => {
 	return (
 		<header
 			className={`${
-				changeBackGround ? 'bg-slate-50 transition-all' : ''
+				changeBackGround ? 'backdrop-blur-lg transition-all' : ''
 			} z-30 flex items-center justify-between w-full py-3 px-[5rem] fixed left-0 top-0`}
 		>
 			<h2 className='text-[1.8rem] font-normal uppercase w-1/4 '>

@@ -13,11 +13,9 @@ const Carousel = () => {
 		[Autoplay()],
 	);
 
-	console.log(emblaRef);
-
 	useEffect(() => {
 		if (emblaApi) {
-			console.log(emblaApi.slideNodes());
+			// 
 		}
 	}, [emblaApi]);
 
@@ -46,12 +44,12 @@ const Carousel = () => {
 						/>
 
 						<div className='flex flex-col gap-2'>
-							<p className='text-[10.5px] font-semibold italic'>
-								<blockquote>
+							<blockquote>
+								<p className='text-[10.5px] font-semibold italic'>
 									"You won't regret it. I would like to personally thank you for
 									your outstanding product. Absolutely wonderful!"
-								</blockquote>
-							</p>
+								</p>
+							</blockquote>
 							<div className='flex items-center gap-1'>
 								{Array.from({ length: 5 }, (_, index) => {
 									return (
@@ -73,12 +71,12 @@ const Carousel = () => {
 						/>
 
 						<div className='flex flex-col gap-2'>
-							<p className='text-[10.5px] font-semibold italic'>
-								<blockquote>
+						<blockquote>
+								<p className='text-[10.5px] font-semibold italic'>
 									"You won't regret it. I would like to personally thank you for
 									your outstanding product. Absolutely wonderful!"
-								</blockquote>
-							</p>
+								</p>
+							</blockquote>
 							<div className='flex items-center gap-1'>
 								{Array.from({ length: 5 }, (_, index) => {
 									return (
@@ -100,12 +98,12 @@ const Carousel = () => {
 						/>
 
 						<div className='flex flex-col gap-2'>
-							<p className='text-[10.5px] font-semibold italic'>
-								<blockquote>
+						<blockquote>
+								<p className='text-[10.5px] font-semibold italic'>
 									"You won't regret it. I would like to personally thank you for
 									your outstanding product. Absolutely wonderful!"
-								</blockquote>
-							</p>
+								</p>
+							</blockquote>
 							<div className='flex items-center gap-1'>
 								{Array.from({ length: 5 }, (_, index) => {
 									return (

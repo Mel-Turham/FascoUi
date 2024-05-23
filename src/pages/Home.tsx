@@ -23,12 +23,13 @@ import Modal from '../components/Modal';
 import Carousel from '../components/Testimonials';
 import NewsLetters from '../components/NewsLetters';
 import Login from '../Auth/Login';
+import SignIn from '../Auth/SignIn';
+import { useView } from '../Context/ViewContext';
 const Home = () => {
+	const { view } = useView();
 	const [selectedProductId, setSelectedProductId] = useState<number | null>(
 		null,
 	);
-
-	const [showLogin, setIsChowLogin] = useState(false);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [showMore, setShowMore] = useState<boolean>(false);
 
@@ -43,7 +44,6 @@ const Home = () => {
 		},
 		[Autoplay()],
 	);
-
 	useEffect(() => {
 		if (emblaApi) {
 			// Access API
@@ -65,10 +65,11 @@ const Home = () => {
 
 	return (
 		<section className='w-full'>
-			{showLogin && <Login />}
+			{view === 'Login' && <Login />}
+			{view === 'signIn' && <SignIn />}
 			{/* modal */}
 
-			<Navbar handleOnClick={() => setIsChowLogin((prevState) => !prevState)} />
+			<Navbar />
 			<section className='flex items-center justify-center gap-6 h-[400px] mt-[8.7rem] flex-col'>
 				<div className='grid grid-cols-3 grid-rows-4 w-full h-full gap-4 '>
 					<div className='row-start-1 row-end-5 bg-gray-200 rounded-md'>

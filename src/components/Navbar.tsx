@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import { GoPackage, GoHome } from 'react-icons/go';
 import { AiOutlineProduct } from 'react-icons/ai';
 import { IoMdHappy } from 'react-icons/io';
+import { useView } from '../Context/ViewContext';
 
-interface LoginProps {
-	handleOnClick: () => void;
-}
-
-const Navbar = (props: LoginProps) => {
-	const { handleOnClick } = props;
+const Navbar = () => {
 	const [changeBackGround, setChangeBackGround] = useState<boolean>(false);
+
+	const { setView } = useView();
 
 	useEffect(() => {
 		const handleChangeBackground = () => {
@@ -23,7 +21,7 @@ const Navbar = (props: LoginProps) => {
 		window.addEventListener('scroll', handleChangeBackground);
 
 		return () => window.removeEventListener('scroll', handleChangeBackground);
-	}, [scrollY]);
+	}, []);
 
 	return (
 		<header
@@ -56,6 +54,7 @@ const Navbar = (props: LoginProps) => {
 			</nav>
 			<div className='flex items-center justify-end gap-3 w-1/4'>
 				<button
+					onClick={() => setView('signIn')}
 					aria-label='sign in button '
 					title='signIn'
 					className='cursor-pointer btn btn-outline btn-sm  py-1'
@@ -63,7 +62,7 @@ const Navbar = (props: LoginProps) => {
 					Sign in
 				</button>
 				<button
-					onClick={handleOnClick}
+					onClick={() => setView('Login')}
 					aria-label='login button'
 					title='Login'
 					className='cursor-pointer btn btn-sm  py-1'

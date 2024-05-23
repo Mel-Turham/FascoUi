@@ -1,7 +1,17 @@
+import { useView } from '../Context/ViewContext';
+import { IoClose } from 'react-icons/io5';
 const Login = () => {
+	const { setView } = useView();
 	return (
 		<div className='fixed w-full z-10 h-screen top-0 left-0 backdrop-blur-sm flex items-center justify-center'>
-			<div className='w-[40rem] max-w-[100%] grid grid-cols-3  bg-white'>
+			<div className='w-[40rem] max-w-[100%] grid grid-cols-3  bg-white relative'>
+				<button
+					onClick={() => setView(null)}
+					className='absolute right-2 top-3 p-2 rounded-full h-8 grid place-content-center w-8 bg-white z-10'
+					aria-label='close-sign'
+				>
+					<IoClose className='fill-black w-5 h-5' />
+				</button>
 				<form className=' col-start-1 col-end-3 p-7 flex flex-col gap-3'>
 					<div className='flex flex-col gap-2'>
 						<h1 className='text-3xl font-bold'>Login</h1>
@@ -35,7 +45,12 @@ const Login = () => {
 						/>
 					</div>
 					<div className='w-[65%] flex justify-between items-center'>
-						<input className='accent-black' type='checkbox' name='pwdForget' id='pwdForget' />
+						<input
+							className='accent-black'
+							type='checkbox'
+							name='pwdForget'
+							id='pwdForget'
+						/>
 						<label className='text-[11.5px]' htmlFor='pwdForget'>
 							Forgot Password?
 						</label>

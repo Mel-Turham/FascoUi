@@ -25,7 +25,9 @@ import NewsLetters from '../components/NewsLetters';
 import Login from '../Auth/Login';
 import SignIn from '../Auth/SignIn';
 import { useView } from '../Context/ViewContext';
+import Loader from '../components/Loader';
 const Home = () => {
+	const [isLoading, setIsloading] = useState<boolean>(true);
 	const { view } = useView();
 	const [selectedProductId, setSelectedProductId] = useState<number | null>(
 		null,
@@ -50,6 +52,12 @@ const Home = () => {
 		}
 	}, [emblaApi]);
 
+	useEffect(() => {
+		setTimeout(() => {
+			setIsloading(false)
+		},4000);
+	}, []);
+
 	const handleOpenModal = (productId: number) => {
 		setSelectedProductId(productId);
 		setIsModalOpen(true);
@@ -62,6 +70,10 @@ const Home = () => {
 
 	const selectedProduct =
 		products.find((product) => product.id === selectedProductId) || null;
+
+	if (isLoading) {
+		return <Loader />;
+	}
 
 	return (
 		<section className='w-full'>

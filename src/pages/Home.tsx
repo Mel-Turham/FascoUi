@@ -22,17 +22,20 @@ import { RxCodesandboxLogo } from 'react-icons/rx';
 import Modal from '../components/Modal';
 import Carousel from '../components/Testimonials';
 import NewsLetters from '../components/NewsLetters';
+import Login from '../Auth/Login';
 const Home = () => {
 	const [selectedProductId, setSelectedProductId] = useState<number | null>(
 		null,
 	);
+
+	const [showLogin, setIsChowLogin] = useState(false);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [showMore, setShowMore] = useState<boolean>(false);
 
 	const newProducts = showMore ? products : products.slice(0, 6);
 	const [emblaRef, emblaApi] = useEmblaCarousel(
 		{
-			loop: false,
+			loop: true,
 			align: 'start',
 			containScroll: 'trimSnaps',
 			slidesToScroll: 1,
@@ -62,16 +65,17 @@ const Home = () => {
 
 	return (
 		<section className='w-full'>
+			{showLogin && <Login />}
 			{/* modal */}
 
-			<Navbar />
+			<Navbar handleOnClick={() => setIsChowLogin((prevState) => !prevState)} />
 			<section className='flex items-center justify-center gap-6 h-[400px] mt-[8.7rem] flex-col'>
 				<div className='grid grid-cols-3 grid-rows-4 w-full h-full gap-4 '>
 					<div className='row-start-1 row-end-5 bg-gray-200 rounded-md'>
 						<img
 							src={image1}
 							alt=''
-							className='w-full h-[100%] object-right-bottom'
+							className='w-full h-[100%] object-cover object-right-top'
 						/>
 					</div>
 					<div className='bg-gray-200  rounded-md'>
@@ -125,41 +129,42 @@ const Home = () => {
 				{/*  */}
 				<Clock />
 				<div
-					className='embla overflow-hidden relative  w-2/3 mt-1'
+					className='embla overflow-hidden relative h-[350px] w-2/3 mt-1'
 					ref={emblaRef}
 				>
-					<div className='embla__container flex '>
-						<div className='embla__slide relative '>
-							<img
-								src='../../src/assets/images/slide-1.png'
-								alt='image-slider'
-								className='w-full h-full object-contain'
-							/>
-						</div>
-						<div className='embla__slide '>
+					<div className='embla__container flex items-center gap-1'>
+						<div className='embla__slide h-[100%] min-w-[50%]  overflow-hidden'>
 							<img
 								src='../../src/assets/images/slide-2.png'
 								alt='image-slider'
-								className='w-full h-full '
+								className='object-cover h-full w-full '
 							/>
 						</div>
-						<div className='embla__slide'>
+						<div className='embla__slide h-[100%] min-w-[50%]'>
 							<img
 								src='../../src/assets/images/slide-3.png'
 								alt='image-slider'
-								className='w-full h-full '
+								className='object-cover h-full w-full '
 							/>
 						</div>
-						<div className='embla__slide'>
+						<div className='embla__slide h-[100%] min-w-[50%]'>
 							<img
-								src='../../src/assets/images/ig-4.png'
+								src='../../src/assets/images/slide-2.png'
 								alt='image-slider'
-								className='w-full h-full  '
+								className='object-cover h-full w-full '
+							/>
+						</div>
+						<div className='embla__slide h-[100%] min-w-[50%]'>
+							<img
+								src='../../src/assets/images/slide-3.png'
+								alt='image-slider'
+								className='object-cover h-full w-full '
 							/>
 						</div>
 					</div>
 					<div className='absolute top-[50%] w-[100%] flex items-center justify-between pr-4 left-2'>
 						<button
+							aria-label='previous button'
 							className='btn rounded-full top-[50%] -left-5 btn-sm p-0 w-12 h-12 shadow-md'
 							type='button'
 							onClick={() => emblaApi?.scrollPrev()}
@@ -167,6 +172,7 @@ const Home = () => {
 							<IoIosArrowBack className='h-5 w-5' />
 						</button>
 						<button
+							aria-label='next button'
 							className='btn right-0 top-[50%] rounded-full btn-sm p-0 w-12 h-12'
 							type='button'
 							onClick={() => emblaApi?.scrollNext()}

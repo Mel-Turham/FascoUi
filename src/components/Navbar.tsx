@@ -3,7 +3,12 @@ import { GoPackage, GoHome } from 'react-icons/go';
 import { AiOutlineProduct } from 'react-icons/ai';
 import { IoMdHappy } from 'react-icons/io';
 
-const Navbar = () => {
+interface LoginProps {
+	handleOnClick: () => void;
+}
+
+const Navbar = (props: LoginProps) => {
+	const { handleOnClick } = props;
 	const [changeBackGround, setChangeBackGround] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -19,6 +24,7 @@ const Navbar = () => {
 
 		return () => window.removeEventListener('scroll', handleChangeBackground);
 	}, [scrollY]);
+
 	return (
 		<header
 			className={`${
@@ -57,6 +63,7 @@ const Navbar = () => {
 					Sign in
 				</button>
 				<button
+					onClick={handleOnClick}
 					aria-label='login button'
 					title='Login'
 					className='cursor-pointer btn btn-sm  py-1'

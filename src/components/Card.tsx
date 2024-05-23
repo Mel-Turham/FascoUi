@@ -15,7 +15,7 @@ interface ProductsProps {
 const Card = ({ product, onViewDetails }: ProductsProps) => {
 	return (
 		<>
-			<article className='card p-4 bg-white rounded-sm shadow-sm'>
+			<article className='card p-4  bg-gray-100 rounded-lg shadow-md'>
 				<figure>
 					<img src={product?.image} alt={product?.name} />
 				</figure>
@@ -40,7 +40,7 @@ const Card = ({ product, onViewDetails }: ProductsProps) => {
 					</div>
 					<div className='flex justify-between items-center mt-2'>
 						<p className='font-bold'>Price: ${product?.price.toFixed(2)}</p>
-						<span className='font-normal text-[13px] text-[#FF4646]'>
+						<span className='font-normal text-[13px] text-[#7F0505]'>
 							Almost Sold Out
 						</span>
 					</div>

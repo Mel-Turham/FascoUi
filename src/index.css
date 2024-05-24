@@ -16,3 +16,7 @@ h6 {
 	font-family: 'PT Serif', serif;
 	font-weight: 500;
 }
+
+::-webkit-scrollbar {
+	display: none;
+}

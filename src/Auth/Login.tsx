@@ -3,7 +3,7 @@ import { IoClose } from 'react-icons/io5';
 const Login = () => {
 	const { setView } = useView();
 	return (
-		<div className='fixed w-full z-10 h-screen top-0 left-0 backdrop-blur-sm flex items-center justify-center'>
+		<div className='fixed w-full z-40 h-screen top-0 left-0 backdrop-blur-sm flex items-center justify-center'>
 			<div className='w-[40rem] max-w-[100%] grid grid-cols-3  bg-white relative'>
 				<button
 					onClick={() => setView(null)}

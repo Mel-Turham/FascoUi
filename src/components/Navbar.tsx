@@ -33,21 +33,21 @@ const Navbar = () => {
 				Fasco<span className='text-sm leading-tight lowercase'>.mel</span>
 			</h2>
 			<nav className='flex items-center w-2/4'>
-				<ul className=' flex items-center justify-between w-full gap-5 '>
-					<li className='cursor-pointer flex items-center gap-1  transition-all hover:-translate-y-1  duration-300 ease-in-out'>
-						<GoHome />
+				<ul className=' flex items-center justify-center gap-8 w-full'>
+					<li className='cursor-pointer flex items-center gap-1  transition-all hover:-translate-y-1  duration-300 ease-in-out font-semibold'>
+						<GoHome className='w-5 h-5' />
 						Home
 					</li>
-					<li className='cursor-pointer  flex items-center gap-1   hover:-translate-y-1 duration-300 ease-in-out '>
-						<IoMdHappy />
+					<li className='cursor-pointer  flex items-center gap-1   hover:-translate-y-1 duration-300 ease-in-out font-semibold '>
+						<IoMdHappy  className='w-5 h-5'/>
 						Deals
 					</li>
-					<li className='cursor-pointer flex items-center gap-1   hover:-translate-y-1 duration-300 ease-in-out '>
-						<AiOutlineProduct />
+					<li className='cursor-pointer flex items-center gap-1   hover:-translate-y-1 duration-300 ease-in-out font-medium '>
+						<AiOutlineProduct  className='w-5 h-5'/>
 						New Arrivals
 					</li>
-					<li className='cursor-pointer flex items-center gap-1 hover:-translate-y-1 duration-300 ease-in-out '>
-						<GoPackage />
+					<li className='cursor-pointer flex items-center gap-1 hover:-translate-y-1 duration-300 ease-in-out font-semibold '>
+						<GoPackage  className='w-5 h-5'/>
 						Packages
 					</li>
 				</ul>
@@ -55,7 +55,7 @@ const Navbar = () => {
 			<div className='flex items-center justify-end gap-3 w-1/4'>
 				<button
 					onClick={() => setView('signIn')}
-					aria-label='sign in button '
+					aria-label='signInButton '
 					title='signIn'
 					className='cursor-pointer btn btn-outline btn-sm  py-1'
 				>

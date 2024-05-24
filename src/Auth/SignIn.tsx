@@ -5,7 +5,7 @@ const SignIn = () => {
 	const { setView } = useView();
 	return (
 		<div className='fixed w-full z-40 h-screen top-0 left-0 backdrop-blur-sm flex items-center justify-center'>
-			<div className='w-[40rem] max-w-[100%] grid grid-cols-3  bg-white relative'>
+			<div className='w-[40rem] max-w-[100%] grid grid-cols-3  bg-white relative rounded-sm'>
 				<button
 					onClick={() => setView(null)}
 					className='absolute right-2 top-3 p-2 rounded-full h-8 grid place-content-center w-8 bg-white z-10'

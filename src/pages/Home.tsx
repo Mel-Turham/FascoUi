@@ -77,25 +77,27 @@ const Home = () => {
 
 	return (
 		<section className='w-full'>
+			{/* Auth components SignIn and Login */}
 			{view === 'Login' && <Login />}
 			{view === 'signIn' && <SignIn />}
+
 			{/* modal */}
 
 			<Navbar />
-			<section className='flex items-center justify-center gap-6 h-[400px] mt-[8.7rem] flex-col'>
+			<section className='flex items-center justify-center gap-6 h-[calc(100vh-67.1979px)] flex-col mt-[7rem]'>
 				<div className='grid grid-cols-3 grid-rows-4 w-full h-full gap-4 '>
-					<div className='row-start-1 row-end-5 bg-gray-200 rounded-md'>
+					<div className='row-start-1 row-end-5 bg-gray-200 rounded-md overflow-hidden'>
 						<img
 							src={image1}
 							alt=''
 							className='w-full h-[100%] object-cover object-right-top'
 						/>
 					</div>
-					<div className='bg-gray-200  rounded-md'>
+					<div className='bg-gray-200  rounded-md overflow-hidden'>
 						<img src={image2} alt='' className='w-full h-full object-cover' />
 					</div>
-					<div className='row-start-2 row-end-4 rounded-md flex items-center flex-col gap-4'>
-						<h2 className='uppercase text-[1.5rem] flex item-center space-x-4'>
+					<div className='row-start-2 row-end-4 flex items-center flex-col'>
+						<h2 className='uppercase text-[1.6rem] flex item-center space-x-5'>
 							<span>u</span>
 							<span>l</span>
 							<span>t</span>
@@ -105,13 +107,13 @@ const Home = () => {
 							<span>t</span>
 							<span>e</span>
 						</h2>
-						<h1 className='uppercase text-5xl  flex items-center space-x-6 font-black '>
+						<h1 className='uppercase text-[5.5rem] flex items-center space-x-6 font-black text-white outline-8  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)] '>
 							<span>S</span>
 							<span>a</span>
 							<span>l</span>
 							<span>e</span>
 						</h1>
-						<p className='capitalize'>new collection</p>
+						<p className='capitalize mb-6 mt-2 text-[20px] font-medium'>new collection</p>
 						<button className='btn btn-neutral btn-sm btn-outline px-6 py-2 uppercase'>
 							shop now
 						</button>

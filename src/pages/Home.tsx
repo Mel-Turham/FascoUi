@@ -55,7 +55,7 @@ const Home = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setIsloading(false)
-		},4000);
+		},2000);
 	}, []);
 
 	const handleOpenModal = (productId: number) => {
